@@ -39,7 +39,7 @@ public class EnemyAI : MonoBehaviour
 
     void Attack()
     {
-        player.GetComponent<PlayerHealth>().TakeDamage(damage);
+         player.GetComponent<PlayerHealth>().TakeDamage(damage);
     }
 
 }
