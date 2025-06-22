@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private const float gravityScale = 9.8f, speedScale = 5f, jumpForce = 8f, turnSpeed = 90f;
+    private const float gravityScale = 9.8f, speedScale = 5f, jumpForce = 2f, turnSpeed = 90f;
     private float verticalSpeed = 0f, mouseX = 0f, mouseY = 0f, CurrentAngleX = 0f;
     private CharacterController controller;
     [SerializeField] private Camera Cam;
