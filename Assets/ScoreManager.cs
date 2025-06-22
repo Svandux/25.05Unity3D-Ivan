@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instantiate;
     public Text scoreText;
+    public GameObject winPanel;
     private int score = 0;
+    private int winScore = 100;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,11 +34,25 @@ public class ScoreManager : MonoBehaviour
     {
         score += points;
         UpdateScoreUI();
+
+        if(score >= winScore)
+        {
+            WinGame();
+        }
     }
 
     void UpdateScoreUI()
     {
         if (scoreText != null)
             scoreText.text = "Score:" + score;
+    }
+
+    void WinGame()
+    {
+        if(winPanel != null)
+        {
+            winPanel.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 }
