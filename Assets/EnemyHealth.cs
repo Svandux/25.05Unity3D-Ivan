@@ -24,6 +24,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
+        ScoreManager.instantiate.AddScore(10);
         Destroy(gameObject);
     }
 

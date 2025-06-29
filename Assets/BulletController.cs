@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    private GameObject ScreenCenter;
-    private float bulletSpeed = 10f;
+    private float bulletSpeed = 5f;
     private Rigidbody rigidbody;
     void Start()
     {
-        ScreenCenter = GameObject.Find("ScreenCenter");
         rigidbody = GetComponent<Rigidbody>();
-        transform.forward = ScreenCenter.transform.position - transform.position;
+        transform.forward = GameObject.Find("Player 2.0").transform.position - transform.position;
         rigidbody.AddForce(transform.forward * bulletSpeed, ForceMode.Impulse);
     }
 
